@@ -1,0 +1,48 @@
+<!--
+  Generated template for the HomePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title text-center>SignIn</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+   <ion-item>
+     <ion-label floating>username</ion-label>
+    <ion-input type="email" [(ngModel)]="email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>password</ion-label>
+     <ion-input type="password" [(ngModel)]="password"></ion-input>
+     </ion-item>
+  </ion-list>
+
+  <button ion-button (click)="signIn()">Sign In</button>
+  <button ion-button (click)="logInWithGoogle()" *ngIf="google.logged">Google</button>
+  <button ion-button (click)="logOut()">LogoutG</button>
+  <button ion-button (click)="logInWithFaceBook()">Facebook</button>
+  <button ion-button (click)="signUp()">Sign Up</button>
+
+  <ion-card>
+    <img src="{{ google.pic }}">
+    <ion-card-content text-center>
+      <ion-title>
+        {{ google.name }}
+      </ion-title>
+      <small>
+        {{ google.email }}
+      </small>
+    </ion-card-content>
+  </ion-card>
+  
+  <!--Facebook slot-->
+  
+</ion-content>
